@@ -1,0 +1,30 @@
+{% block content %}
+    <style>
+        .footer{
+            list-style-type: none;
+            display: grid;
+            grid-template-columns: repeat(4, fit-content(100px));
+            grid-gap: 2rem;
+            justify-content: center;
+        }
+        a{
+            text-decoration: none;
+        }
+        .copyright{
+            display: grid;
+            grid-template-columns: 1fr;
+            justify-items: center;
+        }
+    </style>
+    <div class="footer-container">
+        <ul class="footer">
+            <li class="footer-item"><a href="">About</a></li>
+            <li class="footer-item"><a href="">Social 1</a></li>
+            <li class="footer-item"><a href="">Social 1</a></li>
+            <li class="footer-item"><a href="">Social 1</a></li>
+        </ul>
+        <div class="copyright">
+            <p>Copyright | Version</p>
+        </div>
+    </div>
+{% endblock %}

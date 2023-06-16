@@ -1,0 +1,46 @@
+{% extends 'main.html' %}
+
+
+{% block content %}
+
+<style>
+    .home-container{
+        display: grid;
+        grid-template-columns: 1fr 3fr 1fr;
+        grid-gap: 10px;
+    }
+    .leftside{
+        border-right: 1px solid black;
+        padding: 10px;
+    }
+    .main-content{
+        justify-items: center;
+        padding: 10px;
+    }
+    .rightside{
+        border-left: 1px solid black;
+        padding: 10px;
+    }
+</style>
+<div class="home-container">
+    <div class="leftside">
+        {% for t in posts %}
+            <div>
+                <h4><a href="{% url 'post' t.id %}">{{t.title}}</a></h4>
+                <small>{{t.author}}</small><br>
+                <small>{{t.created_date}}</small>
+            </div>
+        {% endfor %}
+    </div>
+    
+    <div class="main-content">
+        <H3>This is an H3</H3>
+        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+    </div>
+
+    <div class="rightside">
+        <h2>This is an H2</h2>
+    </div>
+</div>
+{{posts}}
+{% endblock %}

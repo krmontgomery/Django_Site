@@ -1,0 +1,33 @@
+{% block content %}
+    <style>
+        .navbar-container{
+
+        }
+        .navbar{
+            display: grid; 
+            justify-self: end;
+            grid-template-columns: 1fr repeat(3, fit-content(100px));
+            grid-gap: 1rem;
+            justify-content: end;
+            justify-items: center;
+            padding-right: 5rem;
+            
+        }
+        .navbar-item{
+            list-style-type: none;
+        }
+        .fullwidth{
+            grid-column: 1 / 2;
+            justify-self: start;
+        }
+    </style>
+
+    <div class="navbar-container">
+        <ul class="navbar">
+            <li class="navbar-item fullwidth"><a href="{% url 'home' %}">Home</a></li>
+            <li class="navbar-item"><a href="">About</a></li>
+            <li class="navbar-item"><a href="">Posts</a></li>
+            <li class="navbar-item"><a href="">Projects</a></li>
+        </ul>
+    </div>
+{% endblock %}
