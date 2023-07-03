@@ -42,5 +42,15 @@
         <h2>This is an H2</h2>
     </div>
 </div>
-{{posts}}
+{% if posts.has_previous %}
+    <a href="?page=1">&laquo <small>First</small></a>
+    <a href="?page={{posts.previous_page_number}}"><small>Previous</small></a>    
+{% endif %}
+
+Page {{ posts.number }} of {{ posts.paginator.num_pages }}
+
+{% if posts.has_next %}
+    <a href="?page={{posts.next_page_number}}"><small>Next</small></a>
+    <a href="?page={{posts.paginator.num_pages}}"><small>Last</small>&raquo</a>
+{% endif %}
 {% endblock %}
