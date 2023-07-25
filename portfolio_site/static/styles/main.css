@@ -1,0 +1,114 @@
+body{
+    background-color: rgb(3, 20, 38);
+    font-family: 'Trebuchet MS', sans-serif;
+    margin: 0;
+}
+h1, h2, h3 {
+    color: white;
+    
+}
+p, small {
+    color: #c5c5c5;
+}
+
+/* Navigation Template Styling */
+a {
+    color: white;
+}
+.navbar-container{
+    margin: 0 4em 0 4em;
+}
+.navbar{
+    height: 5rem;
+    display: grid; 
+    justify-self: end;
+    grid-template-columns: 1fr repeat(3, fit-content(100px));
+    grid-gap: 1rem;
+    padding: 0 1rem 0 1rem;
+    align-content: center;
+}
+.navbar-item{
+    list-style-type: none;
+}
+.fullwidth{
+    grid-column: 1 / 2;
+    justify-self: start;
+}
+
+/* Home Template Styling */
+.home-container{
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-gap: 10px;
+    margin: 0 4em 0 4em;
+}
+.leftside{
+    border-right: 1px solid white;
+    padding: 10px;
+}
+.main-content{
+    justify-items: center;
+    padding: 10px;
+    text-align: center;
+}
+.rightside{
+    border-left: 1px solid white;
+    padding: 10px;
+    text-align: center;
+}
+/* Projects / Home Right side */
+.project_container{
+    padding: 1em;
+    color: #c5c5c5;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+    border-radius: 5px;
+    text-align: left;
+}
+.project_container:after{
+    content: '→';
+    position: absolute;
+    opacity: 0;  
+    top: 14px;
+    right: -20px;
+    transition: 0.5s;
+}
+.project_container:hover{
+    background-color: rgb(17, 50, 86);
+    transition: 1.0s;
+    padding-right: 24px;
+    padding-left:8px;
+}
+.project_container:hover:after {
+opacity: 1;
+right: 10px;
+}
+
+/* ----------------------------- */
+/* Footer Template Styling */
+.footer-container{
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    margin: 3em 0 3em 0;
+}
+.footer{
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(4, fit-content(100px));
+    grid-gap: 2rem;
+    justify-content: center;
+}
+ul{
+    padding:0;
+}
+a{
+    text-decoration: none;
+}
+.copyright{
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+}

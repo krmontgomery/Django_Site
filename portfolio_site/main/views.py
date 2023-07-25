@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import testModel, blogPosts
+from .models import projectModel, blogPosts
 
 from django.core.paginator import Paginator
 
@@ -7,19 +7,16 @@ from django.core.paginator import Paginator
 def home(request):
     # posts = blogPosts.objects.all()
     # Setup Pagination
-    p = Paginator(blogPosts.objects.all(), 2)
+    p = Paginator(blogPosts.objects.all(), 3)
     page = request.GET.get('page')
     posts = p.get_page(page)
+    projects = projectModel.objects.all()
     
     context = {
-        'posts': posts
+        'posts': posts,
+        'projects': projects
     }
     return render(request, 'main/home.html', context)
-
-# def post(request, pk):
-#     post_id = blogPosts.objects.get(id=pk)
-#     post = blogPosts.objects.all()
-    
 
 def post(request, pk):
     post = blogPosts.objects.get(id=pk)
@@ -27,7 +24,7 @@ def post(request, pk):
         return redirect('post', pk=post)
     
     context = {
-        'post': post
+        'post': post,
     }
     print(context)
     return render(request, 'main/post.html', context)
