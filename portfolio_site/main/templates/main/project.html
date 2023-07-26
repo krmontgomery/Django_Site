@@ -1,0 +1,34 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+    .project-container{
+        display: grid;
+        grid-template-columns: 1fr 3fr 1fr;
+        margin-bottom: 50px;
+    }
+    .leftside{
+        border-right: 1px solid black;
+        padding: 10px;
+    }
+    .main-content{
+        justify-items: center;
+        padding: 10px;
+    }
+    .rightside{
+        border-left: 1px solid black;
+        padding: 10px;
+    }
+</style>
+<div class="project-container">
+    <div class="leftside"></div>
+    <div class="main-content">
+        <p>{{project.project_title}}</p>
+        <img src="{{project.project_image.url}}" alt="">
+        <p>{{project.project_body}}</p>
+        <a href="{{project.project_links}}" target="_blank">{{project.project_links}}</a>
+    </div>
+    <div class="rightside"></div>
+</div>
+{% endblock content %}

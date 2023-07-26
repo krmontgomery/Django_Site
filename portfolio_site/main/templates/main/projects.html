@@ -1,0 +1,19 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+
+<div class="projects-container">
+    <div class="leftside"></div>
+    <div class="main-content">
+        {% for p in projects %}
+        <div class="individual-project-containter">
+            <h3>{{p.project_title}}</h3>
+            <p>{{p.project_body|truncatechars:100}}</p>
+            <a href="{{p.project_links}}">{{p.project_links}}</a>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="rightside"></div>
+</div>
+
+{% endblock content %}

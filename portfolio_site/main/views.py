@@ -5,7 +5,6 @@ from django.core.paginator import Paginator
 
 # Create your views here.
 def home(request):
-    # posts = blogPosts.objects.all()
     # Setup Pagination
     p = Paginator(blogPosts.objects.all(), 3)
     page = request.GET.get('page')
@@ -26,10 +25,26 @@ def post(request, pk):
     context = {
         'post': post,
     }
-    print(context)
     return render(request, 'main/post.html', context)
-    
 
+def viewProject(request, pk):
+    project = projectModel.objects.get(id=pk)
+    if request.method == 'POST':
+        return redirect('project', pk=project)
+    
+    context = {
+        'project': project,
+    }
+    return render(request, 'main/project.html', context)
+
+def loadAllProjects(request):
+    projects = projectModel.objects.all()
+    
+    context = {
+        'projects': projects
+    }
+    return render(request, 'main/projects.html', context)
+    
 
 
 
