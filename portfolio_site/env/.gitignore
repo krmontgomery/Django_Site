@@ -5,9 +5,7 @@
 __pycache__
 db.sqlite3
 media
-images/*
-*.jpg
-*.PNG
+**/images
 
 # Distribution / packaging 
 .Python build/ 
