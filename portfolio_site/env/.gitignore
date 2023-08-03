@@ -3,7 +3,7 @@
 *.pot
 __pycache__
 db.sqlite3
-static/images/*
+static/images/
 
 # Environments 
 .env 
