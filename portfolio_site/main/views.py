@@ -17,6 +17,9 @@ def home(request):
     }
     return render(request, 'main/home.html', context)
 
+def about(request):
+    return render(request, 'main/about.html')
+
 def post(request, pk):
     post = blogPosts.objects.get(id=pk)
     if request.method == 'POST':
@@ -26,6 +29,13 @@ def post(request, pk):
         'post': post,
     }
     return render(request, 'main/post.html', context)
+
+def loadAllPosts(request):
+    all_posts = blogPosts.objects.all()
+    context = {
+        'all_posts': all_posts
+    }
+    return render(request, 'main/posts.html', context)
 
 def viewProject(request, pk):
     project = projectModel.objects.get(id=pk)

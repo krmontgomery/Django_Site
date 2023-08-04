@@ -1,8 +1,18 @@
 {% extends 'main.html' %}
-
+{% load static %}
 {% block content %}
     <div class="posts-container">
-        <h1>{{posts.title}}</h1>
-        <p>{{posts.author}}</p>
+        <div class="leftside"></div>
+        <div>
+            <ul>
+                {% for ap in all_posts %}
+                <li class="posts">
+                    <h4>{{ap.blog_title}}</h4>
+                </li>
+                <p>{{ap.blog_body|truncatechars:100}}</p>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="rightside"></div>
     </div>
 {% endblock %}
