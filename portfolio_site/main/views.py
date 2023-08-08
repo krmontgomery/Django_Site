@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import projectModel, blogPosts
+from .models import projectModel, blogPosts, aboutExperienceModel
 
 from django.core.paginator import Paginator
 
@@ -54,8 +54,13 @@ def loadAllProjects(request):
         'projects': projects
     }
     return render(request, 'main/projects.html', context)
-    
 
+def loadJobExperience(request):
+    experience = aboutExperienceModel.objects.all()
+    context = {
+        'experience': experience
+    }
+    return render(request, 'main/about.html', context)
 
 
 

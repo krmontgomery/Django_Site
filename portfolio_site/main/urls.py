@@ -7,5 +7,5 @@ urlpatterns = [
     path('posts/', views.loadAllPosts, name='posts'),
     path('project/<str:pk>/', views.viewProject, name='project'),
     path('projects/', views.loadAllProjects, name='projects'),
-    path('about/', views.about, name='about')
+    path('about/', views.loadJobExperience, name='about')
 ]

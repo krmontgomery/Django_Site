@@ -115,6 +115,14 @@ opacity: 1;
 right: 10px;
 }
 
+/* About.html styling */
+.about-containter {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    margin-bottom: 50px;
+}
+
+
 /* Projects.html page */
 .projects-main-content{
     text-align: left;

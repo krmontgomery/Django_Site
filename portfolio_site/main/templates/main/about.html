@@ -1,9 +1,17 @@
 {% extends 'main.html' %}
 {% load static %}
 {% block content %}
-<div class="leftside"></div>
-<div class="main-content">
-    <h1>About Page</h1>
+<div class="about-containter">
+    <div class="leftside"></div>
+        <div class="main-content">
+                <h1>About Page</h1>
+                {% for e in experience %}
+                    <p>{{e.company_name}}</p>
+                    <p>{{e.job_title}}</p>
+                    <p>{{e.start_date}} - {{e.end_date}}</p>
+                    <p>{{e.job_description}}</p>
+                {% endfor %}
+        </div>
+    <div class="rightside"></div>
 </div>
-<div class="rightside"></div>
 {% endblock content %}
