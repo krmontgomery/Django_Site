@@ -4,15 +4,17 @@
 
 <div class="projects-container">
     <div class="leftside"></div>
-    <div class="main-content">
-        {% for p in projects %}
-        <div class="individual-project-containter">
-            <h3>{{p.project_title}}</h3>
-            <p>{{p.project_body|truncatechars:100}}</p>
-            <a href="{{p.project_links}}">{{p.project_links}}</a>
+        <div class="projects-main-content">
+            <ul>
+                {% for p in projects %}
+                <li class="individual-project-containter">
+                    <h3>{{p.project_title}}</h3>
+                    <p>{{p.project_body|truncatechars:100}}</p>
+                    <a href="{{p.project_links}}">{{p.project_links}}</a>
+                </li>
+                {% endfor %}
+            </ul>
         </div>
-        {% endfor %}
-    </div>
     <div class="rightside"></div>
 </div>
 

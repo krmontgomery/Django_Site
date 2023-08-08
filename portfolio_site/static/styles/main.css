@@ -1,7 +1,7 @@
 body{
     background-color: rgb(3, 20, 38);
     font-family: 'Trebuchet MS', sans-serif;
-    margin: 0;
+    margin: 0 4rem 0 4rem;
 }
 h1, h2, h3 {
     color: white;
@@ -78,8 +78,8 @@ a {
 .blog-container:hover{
     background-color: rgb(17, 50, 86);
     transition: 1.0s;
-    padding-right: 24px;
-    padding-left:8px;
+    /* padding-right: 24px;
+    padding-left:8px; */
 }
 .blog-container:hover:after {
 opacity: 1;
@@ -116,12 +116,47 @@ right: 10px;
 }
 
 /* Projects.html page */
+.projects-main-content{
+    text-align: left;
+    justify-items: center;
+    padding: 10px;
+    color: white;
+}
+
 .projects-container{
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
     margin-bottom: 50px;
 }
-
+.individual-project-containter{
+    list-style: circle;
+    padding: 1em;
+    color: #c5c5c5;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+    border-radius: 5px;
+    text-align: left;
+}
+.individual-project-containter:after{
+    content: '→';
+    position: absolute;
+    opacity: 0;  
+    top: 14px;
+    right: -20px;
+    transition: 0.5s;
+}
+.individual-project-containter:hover{
+    background-color: rgb(17, 50, 86);
+    transition: 1.0s;
+    padding-right: 24px;
+    padding-left:8px;
+}
+.individual-project-containter:hover:after {
+    opacity: 1;
+    right: 10px;
+}
 /* --------------------------- */
 /* Posts Template Page Styling */
 .posts-container{
