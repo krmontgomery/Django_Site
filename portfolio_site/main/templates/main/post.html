@@ -22,12 +22,30 @@
     </style>
     <div class="post-container">
         <div class="leftside">
-
+            {% for t in posts %}
+                <div class="blog-container" onclick='location.href="/posts/post/{{t.id}}";'>
+                    <p>{{t.blog_title}}</p>
+                    <small>{{t.author}}</small><br>
+                    <small>{{t.blog_created_date}}</small>
+                </div>
+                <br>
+            {% endfor %}
+                <p>Page {{ posts.number }} of {{ posts.paginator.num_pages }}</p>
+                
+                {% if posts.has_previous %}
+                    <a href="?page=1">&laquo <small>First</small></a>
+                    <a href="?page={{posts.previous_page_number}}"><small>Previous</small></a>    
+                {% endif %}
+                
+                {% if posts.has_next %}
+                    <a href="?page={{posts.next_page_number}}"><small>Next</small></a>
+                    <a href="?page={{posts.paginator.num_pages}}"><small>Last</small>&raquo</a>
+                {% endif %}
         </div>
         <div class="main-content">
             <h1>{{post.blog_title}}</h1>
             <p>Author: <b>{{post.author}}</b></p>
-            <p>{{post.blog_created_date|timesince}} ago</p>
+            <p>Posted: {{post.blog_created_date|timesince}} ago</p>
             <p>{{post.blog_body}}</p>
         </div>
         <div class="rightside">

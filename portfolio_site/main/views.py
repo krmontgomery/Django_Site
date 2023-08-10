@@ -21,12 +21,16 @@ def about(request):
     return render(request, 'main/about.html')
 
 def post(request, pk):
+    p = Paginator(blogPosts.objects.exclude(id=pk), 3)
+    page = request.GET.get('page')
+    posts = p.get_page(page)
     post = blogPosts.objects.get(id=pk)
     if request.method == 'POST':
         return redirect('post', pk=post)
     
     context = {
         'post': post,
+        'posts': posts
     }
     return render(request, 'main/post.html', context)
 

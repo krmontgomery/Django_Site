@@ -25,7 +25,6 @@
     <div class="leftside">
         <h2>Other Projects</h2>
         {% for p in projects %}
-            if p.id 
             <div class="project_container" onclick='location.href="/projects/project/{{p.id}}";'>
                 <p>{{p.project_title}}</p>
                 <small>{{p.project_body|truncatechars:100}}</small>
@@ -35,10 +34,15 @@
     <div class="main-content">
         <h3>{{project.project_title}}</h3>
         <br>
-        <img src="{{project.project_image.url}}" alt="">
+        <img src="{{project.project_image.url}}" width="600px" height="600px" alt="">
         <br>
         <small>{{project.image_info}}</small>
         <p>{{project.project_body}}</p>
+        {% if project.project_image_two.url is not Null %}
+        <img src="{{project.project_image_two.url}}" width="600px" height="600px" alt="">
+        <br>
+        {% endif %}
+        <br>
         <a href="{{project.project_links}}" target="_blank">{{project.project_links}}</a>
     </div>
     <div class="rightside"></div>
