@@ -22,10 +22,22 @@
     }
 </style>
 <div class="project-container">
-    <div class="leftside"></div>
+    <div class="leftside">
+        <h2>Other Projects</h2>
+        {% for p in projects %}
+            if p.id 
+            <div class="project_container" onclick='location.href="/projects/project/{{p.id}}";'>
+                <p>{{p.project_title}}</p>
+                <small>{{p.project_body|truncatechars:100}}</small>
+            </div>
+        {% endfor %}
+    </div>
     <div class="main-content">
-        <p>{{project.project_title}}</p>
+        <h3>{{project.project_title}}</h3>
+        <br>
         <img src="{{project.project_image.url}}" alt="">
+        <br>
+        <small>{{project.image_info}}</small>
         <p>{{project.project_body}}</p>
         <a href="{{project.project_links}}" target="_blank">{{project.project_links}}</a>
     </div>

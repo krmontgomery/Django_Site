@@ -7,7 +7,7 @@
         <div class="projects-main-content">
             <ul>
                 {% for p in projects %}
-                <li class="individual-project-containter">
+                <li class="individual-project-containter" onclick='location.href="project/{{p.id}}";'>
                     <h3>{{p.project_title}}</h3>
                     <p>{{p.project_body|truncatechars:100}}</p>
                     <a href="{{p.project_links}}">{{p.project_links}}</a>

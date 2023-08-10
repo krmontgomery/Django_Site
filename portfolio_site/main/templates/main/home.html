@@ -36,7 +36,7 @@
         <div class="rightside">
             <h2>Projects</h2>
             {% for p in projects %}
-                <div class="project_container" onclick='location.href="project/{{p.id}}";'>
+                <div class="project_container" onclick='location.href="projects/project/{{p.id}}";'>
                     <p>{{p.project_title}}</p>
                     <small>{{p.project_body|truncatechars:100}}</small>
                 </div>

@@ -22,3 +22,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('main.urls')),
 ]
+
+# Changing text on Admin Front
+admin.site.site_header = "Site Admin"
+admin.site.site_title = "Site Admin Portal"
+admin.site.index_title = 'Portfolio Site Admin Portal'

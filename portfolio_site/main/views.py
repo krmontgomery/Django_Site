@@ -38,12 +38,13 @@ def loadAllPosts(request):
     return render(request, 'main/posts.html', context)
 
 def viewProject(request, pk):
+    projects = projectModel.objects.exclude(id=pk)
     project = projectModel.objects.get(id=pk)
     if request.method == 'POST':
         return redirect('project', pk=project)
-    
     context = {
         'project': project,
+        'projects': projects,
     }
     return render(request, 'main/project.html', context)
 
