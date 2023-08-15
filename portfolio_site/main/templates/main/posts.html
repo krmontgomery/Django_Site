@@ -8,7 +8,7 @@
             <ul>
                 {% for ap in all_posts %}
                     <li class="posts" onclick='location.href="post/{{ap.id}}";'>
-                        <h4>{{ap.blog_title}}</h4>
+                        <h3>{{ap.blog_title}}</h4>
                         <p>{{ap.blog_body|truncatechars:100}}</p>
                     </li>
                 {% endfor %}

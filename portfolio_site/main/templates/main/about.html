@@ -3,14 +3,44 @@
 {% block content %}
 <div class="about-containter">
     <div class="leftside"></div>
-        <div class="main-content">
-                <h1>About Page</h1>
-                {% for e in experience %}
-                    <p>{{e.company_name}}</p>
-                    <p>{{e.job_title}}</p>
-                    <p>{{e.start_date}} - {{e.end_date}}</p>
-                    <p>{{e.job_description}}</p>
-                {% endfor %}
+        <div class="about-main-content">
+            <h1 class="about-centerClass">Kris Montgomery</h1>
+            <h3 class="about-centerClass">EDI Programmer</h3>
+            <p class="about-centerClass">I am passionate about my work. Because I love what I do, I have a 
+               steady source of motivation that drives me to do my best. 
+               In my last job, this passion led me to challenge myself daily 
+               and learn new skills that helped me to do better work. 
+               For example, I taught myself how to use Photoshop to improve the 
+               quality of our photos and graphics. I soon became the go-to person 
+               for any design needs.</p>
+            <br>
+            <br>
+            <h3 class="about-centerClass">Experience</h3>
+            {% for e in experience %}
+            <div class="individual-experience-container">
+                <p>{{e.company_name}}</p>
+                <p>{{e.job_title}}</p>
+                <p>{{e.start_date}} - {{e.end_date}}</p>
+                <p>{{e.job_description}}</p>
+                <div class="technology-used">
+                    {% if e.tech_used != None %}
+                        <p>{{e.tech_used}}</p>
+                    {% endif %}    
+                    {% if e.tech_used_two != None %}
+                        <p>{{e.tech_used_two}}</p>
+                    {% endif %}
+                    {% if e.tech_used_three != None %}
+                        <p>{{e.tech_used_three}}</p>
+                    {% endif %}
+                    {% if e.tech_used_four != None %}
+                        <p>{{e.tech_used_four}}</p>
+                    {% endif %}
+                    {% if e.tech_used_five != None %}
+                        <p>{{e.tech_used_five}}</p>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
         </div>
     <div class="rightside"></div>
 </div>
