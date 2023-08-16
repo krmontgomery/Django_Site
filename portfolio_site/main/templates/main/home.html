@@ -6,6 +6,7 @@
 
 <div class="home-container">
     <div class="leftside">
+        <h2>Posts</h2>
         {% for t in posts %}
             <div class="blog-container" onclick='location.href="posts/post/{{t.id}}";'>
                 <p>{{t.blog_title}}</p>
