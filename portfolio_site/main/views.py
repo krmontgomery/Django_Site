@@ -6,14 +6,15 @@ from django.core.paginator import Paginator
 # Create your views here.
 def home(request):
     # Setup Pagination
-    p = Paginator(blogPosts.objects.all(), 3)
+    blog_p = Paginator(blogPosts.objects.all(), 3)
     page = request.GET.get('page')
-    posts = p.get_page(page)
-    projects = projectModel.objects.all()
+    posts = blog_p.get_page(page)
+    
+    project_p = projectModel.objects.filter().order_by('-id')[:3][::-1]
     
     context = {
         'posts': posts,
-        'projects': projects
+        'project_p': project_p,
     }
     return render(request, 'main/home.html', context)
 

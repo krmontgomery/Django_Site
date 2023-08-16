@@ -325,10 +325,15 @@ body{
     .leftside{
         /* border-right: 1px solid white; */
         padding: 10px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 40%
     }
     .rightside{
         /* border-left: 1px solid white; */
         padding: 10px;
+    }
+    .project_container{
         text-align: center;
     }
 }
