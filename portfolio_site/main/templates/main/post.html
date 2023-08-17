@@ -42,6 +42,10 @@
         </div>
         <div class="main-content">
             <h1>{{post.blog_title}}</h1>
+            {% if post.blog_image.url is not Null %}
+                <img src="{{post.blog_image.url}}" width="600px" height="600px" alt=""><br>
+            {% endif %}
+            <small>{{post.blog_image_info}}</small>
             <p>Author: <b>{{post.author}}</b></p>
             <p>Posted: {{post.blog_created_date|timesince}} ago</p>
             <p>{{post.blog_body}}</p>
