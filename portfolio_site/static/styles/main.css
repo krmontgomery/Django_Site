@@ -44,6 +44,7 @@ a {
 }
 .leftside{
     padding: 10px;
+    text-align: center;
 }
 .main-content{
     justify-items: center;
@@ -82,6 +83,9 @@ a {
 .blog-container:hover:after {
     opacity: 1;
     right: 10px;
+}
+.home-blog-pagination{
+    padding-left: 1rem;
 }
 /* Projects / Home Right side */
 .project_container{
@@ -183,6 +187,9 @@ a {
 .individual-project-container:hover:after {
     opacity: 1;
     right: 10px;
+}
+.view-more-projects:hover{  
+    text-decoration: underline;
 }
 /* --------------------------- */
 /* Posts Template Page Styling */
@@ -318,16 +325,23 @@ body{
         justify-items: center;
         padding: 10px;
         text-align: center;
+        margin-top: 8rem;
         order: -1;
     }
     .leftside{
         padding: 10px;
         margin-left: auto;
+        margin-top: 6rem;
+        margin-bottom: 6rem;
         margin-right: auto;
         width: 40%
     }
     .rightside{
         padding: 10px;
+        margin-bottom: 6rem;
+        width:50%;
+        margin-left: auto;
+        margin-right: auto;
     }
     .project_container{
         text-align: center;
