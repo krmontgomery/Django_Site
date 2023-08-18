@@ -39,9 +39,13 @@
         {% if project.project_image_two.url is not Null %}
             <img src="{{project.project_image_two.url}}" width="600px" height="600px" alt="">
             <br>
+            <small>{{project.image_info_two}}</small>
+            <p>{{project.project_b}}</p><br>
         {% endif %}
         <br>
-        <a href="{{project.project_links}}" target="_blank">{{project.project_links}}</a>
+        <h3>Links:</h3>
+        <a href="{{project.project_links}}" target="_blank">{{project.project_links}}</a><br>
+        <a href="{{project.project_links_two}}" target="_blank">{{project.project_links_two}}</a>        
     </div>
     <div class="rightside"></div>
 </div>

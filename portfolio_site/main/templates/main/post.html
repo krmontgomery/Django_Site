@@ -49,6 +49,10 @@
             <p>Author: <b>{{post.author}}</b></p>
             <p>Posted: {{post.blog_created_date|timesince}} ago</p>
             <p>{{post.blog_body}}</p>
+            <h3>{{post.blog_topic_one_title}}</h3>
+            <img src="{{post.blog_topic_image_one.url}}" width="600px" height="600px" alt=""><br>
+            <small>{{post.blog_topic_image_info}}</small>
+            <p>{{post.topic_one_body}}</p>
         </div>
         <div class="rightside">
             

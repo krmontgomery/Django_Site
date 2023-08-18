@@ -9,6 +9,7 @@
                 {% for ap in all_posts %}
                     <li class="posts" onclick='location.href="post/{{ap.id}}";'>
                         <h3>{{ap.blog_title}}</h4>
+                        <small>{{ap.blog_created_date}}</small>
                         <p>{{ap.blog_body|truncatechars:100}}</p>
                     </li>
                 {% endfor %}
