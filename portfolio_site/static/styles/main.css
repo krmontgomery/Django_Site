@@ -87,6 +87,9 @@ a {
 .home-blog-pagination{
     padding-left: 1rem;
 }
+.view-more-blog{
+    display: none;
+}
 /* Projects / Home Right side */
 .project_container{
     padding: 1em;
@@ -335,6 +338,15 @@ body{
         margin-bottom: 6rem;
         margin-right: auto;
         width: 40%
+    }
+    .view-more-blog{
+        display: block;
+    }
+    .view-more-blog-link:hover{
+        text-decoration: underline;
+    }
+    .home-blog-pagination{
+        display: none;
     }
     .rightside{
         padding: 10px;
