@@ -1,11 +1,12 @@
 from django.shortcuts import render, redirect
-from .models import projectModel, blogPosts, aboutModel, aboutExperienceModel
+from .models import homeModel, projectModel, blogPosts, aboutModel, aboutExperienceModel
 
 from django.core.paginator import Paginator
 
 # Create your views here.
 def home(request):
     # Setup Pagination
+    home_content = homeModel.objects.all()
     blog_p = Paginator(blogPosts.objects.all(), 3)
     page = request.GET.get('page')
     posts = blog_p.get_page(page)
@@ -13,6 +14,7 @@ def home(request):
     project_p = projectModel.objects.filter().order_by('-id')[:3][::-1]
     
     context = {
+        'home_content': home_content,
         'posts': posts,
         'project_p': project_p,
     }
@@ -62,8 +64,10 @@ def loadAllProjects(request):
     return render(request, 'main/projects.html', context)
 
 def loadJobExperience(request):
+    about_user = aboutModel.objects.all()
     experience = aboutExperienceModel.objects.all()
     context = {
+        'about_user': about_user,
         'experience': experience
     }
     return render(request, 'main/about.html', context)

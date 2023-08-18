@@ -2,6 +2,14 @@ from django.db import models
 from django.contrib.auth.models import User
 
 # Create your models here.
+class homeModel(models.Model):
+    home_image = models.ImageField(upload_to='static/images', blank=True, null=True, height_field=None, width_field=None, max_length=100,)
+    home_image_info = models.TextField(null=True, blank=True)
+    home_title = models.CharField(max_length=200)
+    home_body = models.TextField(null=True, blank=True)
+    def __str__(self):
+        return self.home_title
+
 class projectModel(models.Model):
     project_title = models.CharField(max_length=200)
     project_image = models.ImageField(upload_to='static/images', blank=True, null=True, height_field=None, width_field=None, max_length=100,)
