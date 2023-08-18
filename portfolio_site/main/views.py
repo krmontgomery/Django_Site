@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import projectModel, blogPosts, aboutExperienceModel
+from .models import projectModel, blogPosts, aboutModel, aboutExperienceModel
 
 from django.core.paginator import Paginator
 

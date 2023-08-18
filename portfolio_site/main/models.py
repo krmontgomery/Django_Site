@@ -36,6 +36,13 @@ class blogPosts(models.Model):
     def __str__(self):
         return self.blog_title
     
+class aboutModel(models.Model):
+    about_name = models.CharField(max_length=100)
+    job_title = models.CharField(max_length=100)
+    about_body = models.TextField(null=True, blank=True)
+    def __str__(self):
+        return self.about_name
+
 class aboutExperienceModel(models.Model):
     company_name = models.CharField(max_length=200)
     job_title = models.CharField(max_length=200)
@@ -60,3 +67,4 @@ class aboutExperienceModel(models.Model):
     tech_used_five = models.CharField(null=True, blank=True, max_length=32, choices=tech_list)
     def __str__(self):
         return self.job_title
+    
