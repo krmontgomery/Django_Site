@@ -49,10 +49,14 @@
             <p>Author: <b>{{post.author}}</b></p>
             <p>Posted: {{post.blog_created_date|timesince}} ago</p>
             <p>{{post.blog_body}}</p>
-            <h3>{{post.blog_topic_one_title}}</h3>
-            <img src="{{post.blog_topic_image_one.url}}" width="600px" height="600px" alt=""><br>
-            <small>{{post.blog_topic_image_info}}</small>
-            <p>{{post.topic_one_body}}</p>
+            {% if post.blog_topic_one_title != 'Default' %}
+                <h3>{{post.blog_topic_one_title}}</h3>
+                {% if post.blog_topic_image_one.url is not Null %}
+                    <img src="{{post.blog_topic_image_one.url}}" width="600px" height="600px" alt=""><br>
+                    <small>{{post.blog_topic_image_info}}</small>
+                {% endif %}
+                <p>{{post.topic_one_body}}</p>
+            {% endif %}
         </div>
         <div class="rightside">
             

@@ -44,8 +44,12 @@
         {% endif %}
         <br>
         <h3>Links:</h3>
-        <a href="{{project.project_links}}" target="_blank">{{project.project_links}}</a><br>
-        <a href="{{project.project_links_two}}" target="_blank">{{project.project_links_two}}</a>        
+        {% if project.project_links is not Null %}
+            <a href="{{project.project_links}}" target="_blank">{{project.project_links}}</a><br>
+        {% endif %}
+        {% if project.project_links_two is not Null %}    
+            <a href="{{project.project_links_two}}" target="_blank">{{project.project_links_two}}</a>        
+        {% endif %}    
     </div>
     <div class="rightside"></div>
 </div>
