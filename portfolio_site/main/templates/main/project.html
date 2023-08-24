@@ -32,9 +32,11 @@
     <div class="main-content">
         <h3>{{project.project_title}}</h3>
         <br>
-        <img src="{{project.project_image.url}}" width="600px" height="600px" alt="">
-        <br>
-        <small>{{project.image_info}}</small>
+        {% if project.project_image.url is not Null %}
+            <img src="{{project.project_image.url}}" width="600px" height="600px" alt="">
+            <br>
+            <small>{{project.image_info}}</small>
+        {% endif %}
         <p>{{project.project_body}}</p>
         {% if project.project_image_two.url is not Null %}
             <img src="{{project.project_image_two.url}}" width="600px" height="600px" alt="">
