@@ -39,7 +39,7 @@
         {% endif %}
         <p>{{project.project_body}}</p>
         <!-- topic two -->
-        {% if project.project_topic_two_title != 'Default' %}
+        {% if project.project_topic_two_title is not Null %}
             <h3>{{project.project_topic_two_title}}</h3>
             {% if project.project_image_two.url is not Null %}
                 <img src="{{project.project_image_two.url}}" width="600px" height="600px" alt="">
@@ -50,7 +50,7 @@
             <br>
         {% endif %}
         <!-- Topic Three -->
-        {% if project.project_topic_three_title  != 'Default' %}
+        {% if project.project_topic_three_title  is not Null %}
             <h3>{{project.project_topic_three_title}}</h3>
             {% if project.project_image_three.url is not Null %}
                 <img src="{{project.project_image_three.url}}" width="600px" height="600px" alt="">
