@@ -11,18 +11,19 @@ class homeModel(models.Model):
         return self.home_title
 
 class projectModel(models.Model):
-    project_title = models.CharField(max_length=200)
+    project_title = models.CharField(default='', max_length=200)
     project_image = models.ImageField(upload_to='static/images', blank=True, null=True, height_field=None, width_field=None, max_length=100,)
     project_image_info = models.TextField(null=True, blank=True)
     project_body = models.TextField(null=True, blank=True)
     project_image_two = models.ImageField(upload_to='static/images', blank=True, null=True, height_field=None, width_field=None, max_length=100,)
     project_image_two_info = models.TextField(null=True, blank=True)
-    project_topic_two_title = models.CharField(max_length=100)
+    project_topic_two_title = models.CharField(default='', max_length=100)
     project_topic_two_body = models.TextField(null=True, blank=True)
     project_image_three = models.ImageField(upload_to='static/images', blank=True, null=True, height_field=None, width_field=None, max_length=100,)
     project_image_three_info = models.TextField(null=True, blank=True)
-    project_topic_three_title = models.TextField(null=True, blank=True)
+    project_topic_three_title = models.CharField(default='', max_length=100)
     project_topic_three_body = models.TextField(null=True, blank=True)
+    project_slug = models.SlugField(default='', null=False)
     project_links = models.URLField(max_length=500, null=True, blank=True)
     project_links_two = models.URLField(max_length=500, null=True, blank=True)
     def __str__(self):
@@ -30,19 +31,20 @@ class projectModel(models.Model):
 
 class blogPosts(models.Model):
     author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
-    blog_title = models.CharField(max_length=200)
+    blog_title = models.CharField(default='', max_length=200)
     blog_image = models.ImageField(upload_to='static/images', blank=True, null=True, height_field=None, width_field=None, max_length=100,)
     blog_image_info = models.TextField(null=True, blank=True)
     blog_body = models.TextField(null=True, blank=True)
     blog_created_date = models.DateTimeField(auto_now=True)
-    blog_topic_one_title = models.CharField(max_length=200, default='Default')
+    blog_topic_one_title = models.CharField(max_length=200, default='')
     blog_topic_image_one = models.ImageField(upload_to='static/images', blank=True, null=True, height_field=None, width_field=None, max_length=100,)
     blog_image_one_info = models.TextField(null=True, blank=True)
     blog_topic_one_body = models.TextField(null=True, blank=True)
-    blog_topic_two_title = models.CharField(max_length=200, default='Default')
+    blog_topic_two_title = models.CharField(max_length=200, default='')
     blog_topic_image_two = models.ImageField(upload_to='static/images', blank=True, null=True, height_field=None, width_field=None, max_length=100,)
     blog_topic_image_info_two = models.TextField(null=True, blank=True)
     blog_topic_body_two = models.TextField(null=True, blank=True)
+    blog_slug = models.SlugField(default='', null=False)
     blog_links = models.URLField(max_length=500, null=True, blank=True)
     blog_links_two = models.URLField(max_length=500, null=True, blank=True)
     def __str__(self):

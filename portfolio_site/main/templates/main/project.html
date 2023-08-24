@@ -38,13 +38,29 @@
             <small>{{project.image_info}}</small>
         {% endif %}
         <p>{{project.project_body}}</p>
-        {% if project.project_image_two.url is not Null %}
-            <img src="{{project.project_image_two.url}}" width="600px" height="600px" alt="">
+        <!-- topic two -->
+        {% if project.project_topic_two_title != 'Default' %}
+            <h3>{{project.project_topic_two_title}}</h3>
+            {% if project.project_image_two.url is not Null %}
+                <img src="{{project.project_image_two.url}}" width="600px" height="600px" alt="">
+                <br>
+                <small>{{project.project_image_two_info}}</small>
+                {% endif %}
+            <p>{{project.project_topic_two_body}}</p><br>
             <br>
-            <small>{{project.image_info_two}}</small>
-            <p>{{project.project_b}}</p><br>
         {% endif %}
-        <br>
+        <!-- Topic Three -->
+        {% if project.project_topic_three_title  != 'Default' %}
+            <h3>{{project.project_topic_three_title}}</h3>
+            {% if project.project_image_three.url is not Null %}
+                <img src="{{project.project_image_three.url}}" width="600px" height="600px" alt="">
+                <br>
+                <small>{{project.project_image_three_info}}</small>
+                {% endif %}
+            <p>{{project.project_topic_three_body}}</p><br>
+            <br>
+        {% endif %}
+        <!-- Project Links -->
         <h3>Links:</h3>
         {% if project.project_links is not Null %}
             <a href="{{project.project_links}}" target="_blank">{{project.project_links}}</a><br>
