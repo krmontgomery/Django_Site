@@ -1,44 +1,20 @@
 {% extends 'main.html' %}
 
 {% block content %}
-    <style>
-        .post-container{
-            display: grid;
-            grid-template-columns: 1fr 3fr 1fr;
-            margin-bottom: 50px;
-        }
-        .leftside{
-            padding: 10px;
-        }
-        .main-content{
-            justify-items: center;
-            padding: 10px;
-        }
-        .rightside{
-            padding: 10px;
-        }
-    </style>
     <div class="post-container">
-        <div class="leftside">
+        <div class="leftside post-page">
             {% for t in posts %}
                 <div class="blog-container" onclick='location.href="/posts/post/{{t.id}}";'>
                     <p>{{t.blog_title}}</p>
                     <small>{{t.author}}</small><br>
                     <small>{{t.blog_created_date}}</small>
+                    <p>{{t.blog_body|truncatechars:100}}</p>
                 </div>
                 <br>
             {% endfor %}
-                <p>Page {{ posts.number }} of {{ posts.paginator.num_pages }}</p>
-                
-                {% if posts.has_previous %}
-                    <a href="?page=1">&laquo <small>First</small></a>
-                    <a href="?page={{posts.previous_page_number}}"><small>Previous</small></a>    
-                {% endif %}
-                
-                {% if posts.has_next %}
-                    <a href="?page={{posts.next_page_number}}"><small>Next</small></a>
-                    <a href="?page={{posts.paginator.num_pages}}"><small>Last</small>&raquo</a>
-                {% endif %}
+            <div class="view-more-blog">
+                <a href="posts/" class="view-more-blog-link">...View More</a>
+            </div>
         </div>
         <div class="main-content">
             <!-- Main Content -->

@@ -1,21 +1,18 @@
 from django.shortcuts import render, redirect
 from .models import homeModel, projectModel, blogPosts, aboutModel, aboutExperienceModel
-
+from django.http import JsonResponse
 from django.core.paginator import Paginator
 
 # Create your views here.
 def home(request):
     # Setup Pagination
     home_content = homeModel.objects.all()
-    blog_p = Paginator(blogPosts.objects.all(), 3)
-    page = request.GET.get('page')
-    posts = blog_p.get_page(page)
-    
+    blog_p = blogPosts.objects.filter().order_by('-id')[:3][::-1]
     project_p = projectModel.objects.filter().order_by('-id')[:3][::-1]
     
     context = {
         'home_content': home_content,
-        'posts': posts,
+        'blog_p': blog_p,
         'project_p': project_p,
     }
     return render(request, 'main/home.html', context)
@@ -24,13 +21,10 @@ def about(request):
     return render(request, 'main/about.html')
 
 def post(request, pk):
-    p = Paginator(blogPosts.objects.exclude(id=pk), 3)
-    page = request.GET.get('page')
-    posts = p.get_page(page)
+    posts = blogPosts.objects.exclude(id=pk).order_by('-id')[:3][::-1]
     post = blogPosts.objects.get(id=pk)
     if request.method == 'POST':
         return redirect('post', pk=post)
-    
     context = {
         'post': post,
         'posts': posts
@@ -45,7 +39,7 @@ def loadAllPosts(request):
     return render(request, 'main/posts.html', context)
 
 def viewProject(request, pk):
-    projects = projectModel.objects.exclude(id=pk)
+    projects = projectModel.objects.exclude(id=pk).order_by('-id')[:3][::-1]
     project = projectModel.objects.get(id=pk)
     if request.method == 'POST':
         return redirect('project', pk=project)

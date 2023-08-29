@@ -7,7 +7,7 @@
 <div class="home-container">
     <div class="leftside">
         <h2>Posts</h2>
-        {% for t in posts %}
+        {% for t in blog_p %}
             <div class="blog-container" onclick='location.href="posts/post/{{t.id}}";'>
                 <p>{{t.blog_title}}</p>
                 <small>{{t.blog_created_date}}</small><br>
@@ -17,19 +17,6 @@
             {% endfor %}
             <div class="view-more-blog">
                 <a href="posts/" class="view-more-blog-link">...View More</a>
-            </div>
-            <div class="home-blog-pagination">
-                <p>Page {{ posts.number }} of {{ posts.paginator.num_pages }}</p>
-                
-                {% if posts.has_previous %}
-                    <a href="?page=1">&laquo <small>First</small></a>
-                    <a href="?page={{posts.previous_page_number}}"><small>Previous</small></a>    
-                {% endif %}
-                
-                {% if posts.has_next %}
-                    <a href="?page={{posts.next_page_number}}"><small>Next</small></a>
-                    <a href="?page={{posts.paginator.num_pages}}"><small>Last</small>&raquo</a>
-                {% endif %}
             </div>
         </div>
         
@@ -45,7 +32,6 @@
         <div class="rightside">
             <h2>Projects</h2>
             {% for p in project_p %}
-            {{ forloop.counter0 }}
             <div class="project_container" onclick='location.href="projects/project/{{p.id}}";'>
                 <p>{{p.project_title}}</p>
                 <small>{{p.project_body|truncatechars:100}}</small>

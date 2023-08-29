@@ -2,31 +2,17 @@
 {% load static %}
 
 {% block content %}
-<style>
-    .project-container{
-        display: grid;
-        grid-template-columns: 1fr 3fr 1fr;
-        margin-bottom: 50px;
-    }
-    .leftside{
-        padding: 10px;
-    }
-    .main-content{
-        justify-items: center;
-        padding: 10px;
-    }
-    .rightside{
-        padding: 10px;
-    }
-</style>
 <div class="project-container">
-    <div class="leftside">
+    <div class="leftside project-page">
         <h2>Other Projects</h2>
         {% for p in projects %}
             <div class="project_container" onclick='location.href="/projects/project/{{p.id}}";'>
                 <p>{{p.project_title}}</p>
                 <small>{{p.project_body|truncatechars:100}}</small>
             </div>
+            {% if forloop.counter >= 3 %}
+                <a href="projects/" class="view-more-projects"><h4>...View More</h4></a>
+            {% endif %}
         {% endfor %}
     </div>
     <div class="main-content">
