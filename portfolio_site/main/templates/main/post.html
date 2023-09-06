@@ -50,9 +50,9 @@
             {% if post.blog_links_two is not Null %}
                 <a href="{{post.blog_links_two}}" target="_blank">{{post.blog_links_two}}</a>
             {% endif %}
+            <br>
+            <a href="{% url 'posts' %}" class="back-to">Back</a>
         </div>
-        <div class="rightside">
-            
-        </div>
+        <div class="rightside"></div>
     </div>
 {% endblock content %}

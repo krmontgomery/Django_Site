@@ -40,6 +40,12 @@
             order: -1;
             width: 80%;
         }
+        .post-page{
+            display: none;
+        }
+        .project-page{
+            display: none;
+        }
         .leftside{
             padding: 10px;
             margin-left: auto;
