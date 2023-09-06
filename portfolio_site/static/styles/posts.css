@@ -43,9 +43,9 @@
 }
 /* ----------------------------- */
 /* Post template styling */
-.post-container{
+/* .post-container{
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
     grid-gap: 10px;
     margin: 0 4em 0 4em;
-}
+} */

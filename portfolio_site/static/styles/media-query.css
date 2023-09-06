@@ -4,6 +4,10 @@
     body{
         margin: 0;
     }
+    img{
+        max-width:80%;
+        height:auto;
+    }
         /* Home Template Styling */
     .home-container{
         display: grid;
@@ -41,10 +45,10 @@
             width: 80%;
         }
         .post-page{
-            display: none;
+            /* display: none; */
         }
         .project-page{
-            display: none;
+            /* display: none; */
         }
         .leftside{
             padding: 10px;

@@ -118,21 +118,6 @@ a {
     opacity: 1;
     right: 10px;
 }
-/* Posts and Porjects Generic classes */
-.back-to{
-    display: block;
-    margin: 3rem auto 0 auto;
-    padding: 2px 9px 2px 9px;
-    background-color: rgb(89, 123, 191);
-    color: rgb(218, 231, 255);
-    border-radius: 15px;
-    width: 20%;
-}
-.back-to:hover{
-    background-color: rgb(218, 231, 255);
-    color: rgb(89, 123, 191); 
-}
-
 /* About.html styling */
 .about-containter {
     display: grid;
