@@ -11,7 +11,7 @@
                 <small>{{p.project_body|truncatechars:100}}</small>
             </div>
             {% if forloop.counter >= 3 %}
-                <a href="projects/" class="view-more-projects"><h4>...View More</h4></a>
+                <a href="{% url 'projects' %}" class="view-more-projects"><h4>...View More</h4></a>
             {% endif %}
         {% endfor %}
     </div>

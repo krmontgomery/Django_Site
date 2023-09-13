@@ -1,25 +1,21 @@
 /* Media Queries */
 /* Extra large devices */
 @media only screen and (max-width: 1200px){
-    body{
-        margin: 0;
+        body{
+            margin: 0;
+        }
+        img{
+            max-width:80%;
+            height:auto;
+        }
+            /* Home Template Styling */
+        .home-container{
+            display: grid;
+            grid-template-columns: 1fr 3fr 1fr;
+            grid-gap: 0;
+            margin: 0;
+        }
     }
-    img{
-        max-width:80%;
-        height:auto;
-    }
-        /* Home Template Styling */
-    .home-container{
-        display: grid;
-        grid-template-columns: 1fr 3fr 1fr;
-        grid-gap: 0;
-        margin: 0;
-    }
-    .leftside{
-        z-index: 10;
-    }
-    }
-    
     /* Large Devices */
     @media only screen and (max-width: 992px){
         .home-container{
@@ -44,19 +40,13 @@
             order: -1;
             width: 80%;
         }
-        .post-page{
-            /* display: none; */
-        }
-        .project-page{
-            /* display: none; */
-        }
         .leftside{
             padding: 10px;
             margin-left: auto;
-            margin-top: 6rem;
-            margin-bottom: 6rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
             margin-right: auto;
-            width: 80%
+            width: 65%
         }
         .blog-container{
             width: 100%;
@@ -66,8 +56,8 @@
         }
         .rightside{
             padding: 10px;
-            margin-bottom: 6rem;
-            width:80%;
+            margin-bottom: 3rem;
+            width:65%;
             margin-left: auto;
             margin-right: auto;
         }
